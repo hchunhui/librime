@@ -24,6 +24,7 @@ init:
   - git config --global core.autocrlf true
 
 install:
+  - git submodule update --init --recursive
   - .\appveyor.install.bat
 
 build_script:
