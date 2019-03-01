@@ -1,0 +1,3 @@
+[submodule "plugins/librime-lua"]
+	path = plugins/librime-lua
+	url = https://github.com/hchunhui/librime-lua.git
