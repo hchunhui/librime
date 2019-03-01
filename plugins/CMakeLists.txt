@@ -1,0 +1,10 @@
+file(GLOB plugin_files "*")
+foreach(file ${plugin_files})
+  if (IS_DIRECTORY ${file})
+    message(STATUS "Found plugin: ${file}")
+    add_subdirectory(${file})
+  endif()
+endforeach(file)
+
+set(rime_plugins_deps ${rime_plugins_deps} PARENT_SCOPE)
+set(rime_default_modules ${rime_default_modules} PARENT_SCOPE)

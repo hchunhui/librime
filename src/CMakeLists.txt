@@ -39,7 +39,8 @@ set(rime_core_deps
     ${Glog_LIBRARY}
     ${YamlCpp_LIBRARY}
     ${CMAKE_THREAD_LIBS_INIT}
-    ${rime_optional_deps})
+    ${rime_optional_deps}
+    ${rime_plugins_deps})
 set(rime_extra_deps
     ${ICONV_LIBRARIES}
     ${LevelDb_LIBRARY}
