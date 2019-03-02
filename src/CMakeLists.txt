@@ -39,8 +39,7 @@ set(rime_core_deps
     ${Glog_LIBRARY}
     ${YamlCpp_LIBRARY}
     ${CMAKE_THREAD_LIBS_INIT}
-    ${rime_optional_deps}
-    ${rime_plugins_deps})
+    ${rime_optional_deps})
 set(rime_extra_deps
     ${ICONV_LIBRARIES}
     ${LevelDb_LIBRARY}
@@ -59,7 +58,7 @@ else()
 endif()
 
 if(BUILD_SHARED_LIBS)
-  add_library(rime ${rime_src})
+  add_library(rime ${rime_plugins_deps} ${rime_src})
   target_link_libraries(rime ${rime_deps})
   set_target_properties(rime PROPERTIES DEFINE_SYMBOL "RIME_EXPORTS")
   set_target_properties(rime PROPERTIES VERSION ${rime_version} SOVERSION ${rime_soversion})
